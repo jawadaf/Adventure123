@@ -47,7 +47,7 @@ public class Room {
     }
     public Item findItem(String itemName){
         for (Item item: items) {
-            if (item.getItem().equals(itemName)) {
+            if (item.getItemName().equals(itemName)) {
                 return item;
             }
         } return null;

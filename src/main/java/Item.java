@@ -1,15 +1,15 @@
 public class Item {
-    private String item;
+    private String itemName;
     private String description;
 
 
     public Item(String item, String description) {
-        this.item = item;
+        this.itemName = item;
         this.description = description;
     }
 
-    public String getItem() {
-        return item;
+    public String getItemName() {
+        return itemName;
     }
 
     public String getDescription() {
@@ -17,7 +17,7 @@ public class Item {
     }
     public String toString() {
         return "Item" +
-                " name '" + item + '\'' +
+                " name '" + itemName + '\'' +
                 ", description -'" + description;
     }
 }

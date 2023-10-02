@@ -15,14 +15,19 @@ public class Player {
         return inventory;
     }
 
-    public boolean takeItem(String itemName){
-        Item found = room.findItem(itemName);
-        if (found != null) {
-                inventory.add(found);
-                room.getItems().remove(found);
-
+    public boolean takeItem(String requestedItem) {
+        boolean itemFound = false;
+        ArrayList<Item> itemsInRoom = room.getItems();
+        for (Item item : itemsInRoom) {
+            if (item.getItemName().equals(requestedItem.toLowerCase())) {
+                int index = itemsInRoom.indexOf(item);
+                inventory.add(item);
+           //     room.removeItem(index);
+                itemFound = true;
+                break;
+            }
         }
-        return  false;
+        return itemFound;
     }
 }
 
