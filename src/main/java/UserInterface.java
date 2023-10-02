@@ -55,7 +55,18 @@ public class UserInterface {
                         "Type 'help' to get help \n");
 
 
-            } else if (userInput.equals("exit")) {
+            } else if(userInput.equals("take")) {
+                System.out.println("What do you want to take?");
+                userInput = scanner.nextLine().toLowerCase();
+                boolean result = adventure.take(userInput);
+                if (result == true){
+                    System.out.println("You took the item called " + userInput);
+                } else {
+                    System.out.println("The item was not found");
+                }
+            }
+
+            else if (userInput.equals("exit")) {
                 System.out.println("Thank you for playing, close the tab");
                 game = false;
             } else {

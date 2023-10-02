@@ -52,5 +52,9 @@ public class Adventure {
     public String look() {
         return map.look();
     }
+
+    public boolean take(String userInput) {
+        return player.takeItem(userInput);
+
+    }
 }
-// Af Muhammad & Jawad

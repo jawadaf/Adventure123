@@ -10,12 +10,17 @@ public class Player {
         this.room = room;
         this.inventory = new ArrayList<>();
     }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
+
     public boolean takeItem(String itemName){
-        for (Item item : room.getItems()){
-            if(item.getItem().toLowerCase().equals(itemName)){
-                inventory.add(item);
-                room.getItems().remove(item);
-            }
+        Item found = room.findItem(itemName);
+        if (found != null) {
+                inventory.add(found);
+                room.getItems().remove(found);
+
         }
         return  false;
     }

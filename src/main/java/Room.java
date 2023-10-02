@@ -17,10 +17,10 @@ public class Room {
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
-       /* this.north = null;
+        this.north = null;
         this.east = null;
         this.south = null;
-        this.west = null; */
+        this.west = null;
         this.items = new ArrayList<>();
 
     }
@@ -44,6 +44,13 @@ public class Room {
 
     public void dropItem(Item item){
         items.remove(item);
+    }
+    public Item findItem(String itemName){
+        for (Item item: items) {
+            if (item.getItem().equals(itemName)) {
+                return item;
+            }
+        } return null;
     }
 
     public String getName(){
