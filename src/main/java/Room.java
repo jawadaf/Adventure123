@@ -9,8 +9,6 @@ public class Room {
     private Room south;
     private Room west;
 
-    private String item;
-    private String itemDescription;
 
     private ArrayList<Item> items;
 
@@ -40,6 +38,10 @@ public class Room {
     public void addItem(Item item){
         items.add(item);
 
+    }
+
+    public void removeItem(Item item){
+        getItems().remove(item);
     }
 
     public void dropItem(Item item){
@@ -88,9 +90,7 @@ public class Room {
         this.west = west;
     }
 
-    public void setItem(String item) {
-        this.item = item;
-    }
+
 }
 
 

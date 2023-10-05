@@ -10,40 +10,6 @@ public class Adventure {
     public void play() {
     }
 
-    public void goEast(){
-        if (map.getCurrentRoom().getEast() != null) {
-            map.setCurrentRoom(map.getCurrentRoom().getEast());
-            System.out.println("You go east");
-        } else {
-            System.out.println("You can't go there");
-        }
-    }
-
-    public void goWest(){
-        if (map.getCurrentRoom().getWest() != null) {
-            map.setCurrentRoom(map.getCurrentRoom().getWest());
-            System.out.println("You go west");
-        } else {
-            System.out.println("You can't go there");
-        }
-    }
-    public void goNorth(){
-        if (map.getCurrentRoom().getNorth() != null) {
-            map.setCurrentRoom(map.getCurrentRoom().getNorth());
-            System.out.println("You go north");
-        } else {
-            System.out.println("You can't go there");
-        }
-
-    }
-    public void goSouth(){
-        if (map.getCurrentRoom().getSouth() != null) {
-            map.setCurrentRoom(map.getCurrentRoom().getSouth());
-            System.out.println("You go south");
-        } else {
-            System.out.println("You can't go there");
-        }
-    }
 
     public Room getCurrentRoom() {
         return map.getCurrentRoom();
@@ -57,4 +23,25 @@ public class Adventure {
         return player.takeItem(userInput);
 
     }
+
+    public String showItems(){
+        return player.showItems();
+    }
+
+    public void goEast() {
+        player.goEast();
+    }
+
+    public void goWest() {
+        player.goWest();
+    }
+
+    public void goSouth() {
+        player.goSouth();
+    }
+
+    public void goNorth() {
+        player.goNorth();
+    }
+
 }
