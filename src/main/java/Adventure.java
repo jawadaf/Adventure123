@@ -3,40 +3,45 @@ public class Adventure {
     private Player player;
 
     public Adventure() {
+
         player = new Player(map.getCurrentRoom());
     }
+
+    public void play() {
+    }
+
 
     public Room getCurrentRoom() {
         return map.getCurrentRoom();
     }
 
     public String look() {
-        return player.getCurrentRoom().getDescription();
-        //der stod før map.look();
+        return map.look();
     }
 
     public boolean take(String userInput) {
         return player.takeItem(userInput);
+
     }
 
-
-
-    public void move(String direction){
-        player.move(direction);
+    public String showItems(){
+        return player.showItems();
     }
-    public void goEast(){
+
+    public void goEast() {
         player.goEast();
     }
 
-    public void goWest(){
+    public void goWest() {
         player.goWest();
     }
 
-    public void goSouth(){
+    public void goSouth() {
         player.goSouth();
     }
 
-    public void goNorth(){
+    public void goNorth() {
         player.goNorth();
     }
+
 }
