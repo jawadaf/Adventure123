@@ -58,9 +58,10 @@ public class Player {
         }
     }
     public void goNorth(){
-        if (map.getCurrentRoom().getNorth() != null) {
-            map.setCurrentRoom(getCurrentRoom().getNorth());
+        if (room.getNorth() != null) {
+            Room northRoom = room.getNorth();
             System.out.println("You go north");
+            room = northRoom;
         } else {
             System.out.println("You can't go there");
         }
