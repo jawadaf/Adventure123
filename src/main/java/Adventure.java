@@ -1,8 +1,10 @@
 public class Adventure {
-    private Map map = new Map();
+    private Map map;
     private Player player;
 
     public Adventure() {
+        map = new Map();
+        map.builMap();
 
         player = new Player(map.getCurrentRoom());
     }
@@ -16,17 +18,25 @@ public class Adventure {
     }
 
     public String look() {
-        return map.look();
+        return player.look();
     }
 
+    public void getInventory(){
+        player.getInventory();
+    }
+
+    public boolean drop(String userInput){
+        return player.dropItem(userInput);
+
+    }
     public boolean take(String userInput) {
         return player.takeItem(userInput);
 
     }
 
-    public String showItems(){
-        return player.showItems();
-    }
+   // public String showItems(){
+        //return player.showItems();
+    //}
 
     public void goEast() {
         player.goEast();

@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Room {
@@ -40,13 +39,11 @@ public class Room {
 
     }
 
-    public void removeItem(Item item){
+    public Item removeItem(Item item){
         getItems().remove(item);
+        return item;
     }
 
-    public void dropItem(Item item){
-        items.remove(item);
-    }
     public Item findItem(String itemName){
         for (Item item: items) {
             if (item.getItemName().equals(itemName)) {
@@ -91,6 +88,9 @@ public class Room {
     }
 
 
+    public Item removeItem() {
+        return null;
+    }
 }
 
 

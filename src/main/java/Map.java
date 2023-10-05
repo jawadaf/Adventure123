@@ -5,6 +5,10 @@ public class Map {
     private Room currentRoom;
 
     public Map() {
+
+    }
+
+    public void builMap(){
         Room room1 = new Room("Room 1", "The entry point, the room is cold and empty ");
         Room room2 = new Room("Room 2", "This room is filled with cats and a lantern");
         Room room3 = new Room("Room 3", "There is a waterfall and jungle in this room");
@@ -83,7 +87,5 @@ public class Map {
         this.currentRoom = room;
     }
 
-    public String look() {
-        return currentRoom.getName() + " " + currentRoom.getDescription();
-    }
+
 }

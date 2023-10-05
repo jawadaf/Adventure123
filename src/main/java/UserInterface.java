@@ -27,9 +27,21 @@ public class UserInterface {
         while (game) {
             String userInput = scanner.nextLine().toLowerCase();
 
+            if (userInput.equals("drop")){
+                System.out.println("What do you want to drop?");
+                userInput = scanner.nextLine().toLowerCase();
+                boolean result = adventure.drop(userInput);
+                if (result == true) {
+                    System.out.println("You dropped the item called " + userInput);
+                } else {
+                        System.out.println("The item was not dropped");
+                }
+            }
+            if (userInput.equals("inventory")){
+                adventure.getInventory();
+            }
             if (userInput.equals("look")) {
                 System.out.println("You are in " + adventure.look());
-                System.out.println("You see the following items: " + adventure.showItems());
 
             } else if (userInput.equals("east")) {
                 adventure.goEast();
@@ -53,7 +65,11 @@ public class UserInterface {
                         "Type 'south' to move down \n" +
                         "Type 'exit' to exit \n" +
                         "Type 'look' to look around \n" +
-                        "Type 'help' to get help \n");
+                        "Type 'help' to get help \n" +
+                        "Type 'take' to take item \n" +
+                        "Type 'drop' to drop item \n" +
+                        "Type 'inventory' to see inventory \n");
+
 
 
             } else if (userInput.equals("take")) {
