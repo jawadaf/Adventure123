@@ -2,10 +2,11 @@ import java.util.ArrayList;
 
 public class Player {
 
+
     private Room currentRoom;
 
 
-    private ArrayList<Item> inventory;
+    ArrayList<Item> inventory;
 
     public Player(Room room) {
 
@@ -19,9 +20,9 @@ public class Player {
     }
 
     public void getInventory() {
-         if (inventory != null){
-             System.out.println(inventory);
-         }
+        if (inventory != null) {
+            System.out.println(inventory);
+        }
     }
   /*  public boolean dropItem(String itemName) {
         boolean itemDropped = false;
@@ -37,16 +38,16 @@ public class Player {
         }
         return itemDropped;  */
 
-      public boolean dropItem(String name) {
-          Item dropped = currentRoom.removeItem();
-          if (dropped == null) {
-              inventory.remove(dropped);
-              currentRoom.removeItem(dropped);
-              return true;
-          } else {
-              return false;
-          }
-      }
+    public boolean dropItem(String name) {
+        Item dropped = currentRoom.removeItem();
+        if (dropped == null) {
+            inventory.remove(dropped);
+            currentRoom.removeItem(dropped);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
     public boolean takeItem(String name) {
@@ -111,5 +112,15 @@ public class Player {
         }
 
     }
-}
 
+    public boolean isFood(String name) {
+        for (Item i : inventory) {
+            if (i instanceof Food) {
+                return true;
+            }
+        }
+
+
+        return false;
+    }
+}

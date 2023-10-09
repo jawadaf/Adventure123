@@ -14,7 +14,7 @@ public class Adventure {
 
 
     public Room getCurrentRoom() {
-        return map.getCurrentRoom();
+        return map.getCurrentRoom(); 
     }
 
     public String look() {
@@ -23,6 +23,10 @@ public class Adventure {
 
     public void getInventory(){
         player.getInventory();
+    }
+
+    public boolean isFood(String name) {
+        return player.isFood(name);
     }
 
     public boolean drop(String userInput){
@@ -53,5 +57,7 @@ public class Adventure {
     public void goNorth() {
         player.goNorth();
     }
+
+
 
 }

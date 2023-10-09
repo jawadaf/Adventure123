@@ -31,6 +31,12 @@ public class Map {
         room8.addItem (new Item ("towel", "pick up the towel"));
         room9.addItem (new Item ("pillow", "pick up the pillow"));
 
+        room1.addFood("potion", "Health potion", 60);
+        room3.addFood("Lollypop", "Health lollypop", 70);
+        room5.addFood("Burger", "Health burger", 80);
+        room7.addFood("Apple", "Health apple", 90);
+        room8.addFood("Banana", "Health banana", 100);
+
         currentRoom = room1;
         room1.setWest(null);
         room1.setEast(room2);

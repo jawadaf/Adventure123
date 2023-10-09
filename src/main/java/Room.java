@@ -8,7 +8,6 @@ public class Room {
     private Room south;
     private Room west;
 
-
     private ArrayList<Item> items;
 
     public Room(String name, String description) {
@@ -90,6 +89,10 @@ public class Room {
 
     public Item removeItem() {
         return null;
+    }
+
+    public void addFood(String name, String longName, int healthPoints){
+        items.add(new Food(name, longName, healthPoints));
     }
 }
 

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class UserInterface {
+    String itemUserInput;
 
     Adventure adventure = new Adventure();
 
@@ -12,31 +13,54 @@ public class UserInterface {
 
     public void startGame() {
         Scanner scanner = new Scanner(System.in);
+        //String userInput = "";
+        String itemUserInput;
+        boolean gameRunning = true;
 
-        System.out.println("Welcome to the game called Adventure");
-        System.out.println("You start in " + adventure.getCurrentRoom().getName());
-        System.out.println("Type,'east' to move right \n" +
-                "Type 'west' to move left \n" +
-                "Type 'north' to move up \n" +
-                "Type 'south' to move down \n" +
-                "Type 'exit' to exit \n" +
-                "Type 'look' to look around \n" +
-                "Type 'help' to get help \n" );
+        /*do {
+            userInput = scanner.nextLine().toLowerCase();
+            switch (userInput) {
+                case "eat":
+                    System.out.println("What do you want to eat?");
+                    String itemToEat = scanner.nextLine().toLowerCase();
+                    boolean ate = adventure.isFood(itemToEat);
+                    if (ate) {
+                        System.out.println("You ate " + itemToEat + ". Yum!");
+                    } else {
+                        System.out.println("You can't eat that.");
+                    }
+                    break;
+
+
+            }
+
+        } while (gameRunning); */
+
+            System.out.println("Welcome to the game called Adventure");
+            System.out.println("You start in " + adventure.getCurrentRoom().getName());
+            System.out.println("Type,'east' to move right \n" +
+                    "Type 'west' to move left \n" +
+                    "Type 'north' to move up \n" +
+                    "Type 'south' to move down \n" +
+                    "Type 'exit' to exit \n" +
+                    "Type 'look' to look around \n" +
+                    "Type 'help' to get help \n");
 
         boolean game = true;
         while (game) {
-            String userInput = scanner.nextLine().toLowerCase();
-
-            if (userInput.equals("drop")){
+            String userInput = scanner.nextLine().toLowerCase(); // forandring: fra 'userInput' til 'itemToDrop'
+            if (userInput.equals("drop")) {
                 System.out.println("What do you want to drop?");
                 userInput = scanner.nextLine().toLowerCase();
                 boolean result = adventure.drop(userInput);
                 if (result == true) {
                     System.out.println("You dropped the item called " + userInput);
                 } else {
-                        System.out.println("The item was not dropped");
+                    System.out.println("The item was not dropped");
                 }
+
             }
+
             if (userInput.equals("inventory")){
                 adventure.getInventory();
             }
@@ -82,14 +106,26 @@ public class UserInterface {
                     System.out.println("The item was not found");
                 }
             }
+            else if (userInput.equals("eat")){
+                System.out.println("What do you want to eat?");
+                String itemToEat = scanner.nextLine().toLowerCase();
+                boolean ate = adventure.isFood(itemToEat);
+                if (ate) {
+                    System.out.println("You ate " + itemToEat + ". Yum!");
+                } else {
+                    System.out.println("You can't eat that.");
+                }
+            }
             else if (userInput.equals("exit")) {
                 System.out.println("Thank you for playing, close the tab");
                 game = false;
             } else {
                 System.out.println("Invalid commando");
             }
+
         }
         scanner.close();
     }
-}
+    }
+
 
