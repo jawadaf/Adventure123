@@ -7,6 +7,7 @@ public class Room {
     private Room east;
     private Room south;
     private Room west;
+    private Weapon weapon;
 
     private ArrayList<Item> items;
 
@@ -90,9 +91,7 @@ public class Room {
         return null;
     }
 
-    public void addFood(String name, String longName, int healthPoints){
-        items.add(new Food(name, longName, healthPoints));
-    }
+
 }
 
 

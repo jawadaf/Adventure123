@@ -48,7 +48,7 @@ public class UserInterface {
 
         boolean game = true;
         while (game) {
-            String userInput = scanner.nextLine().toLowerCase(); // forandring: fra 'userInput' til 'itemToDrop'
+            String userInput = scanner.nextLine().toLowerCase();
             if (userInput.equals("drop")) {
                 System.out.println("What do you want to drop?");
                 userInput = scanner.nextLine().toLowerCase();

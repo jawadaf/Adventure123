@@ -57,11 +57,18 @@ public class Map {
 
 
 
-        room1.addFood("potion", "Health potion", 60);
-        room3.addFood("Lollypop", "Health lollypop", 70);
-        room5.addFood("Burger", "Health burger", 80);
-        room7.addFood("Apple", "Health apple", 90);
-        room8.addFood("Banana", "Health banana", 100);
+        room1.addItem(new Food("potion", "Health potion", 60));
+        room3.addItem(new Food("Lollypop", "Health lollypop", 70));
+        room5.addItem(new Food("Burger", "Health burger", 80));
+        room7.addItem(new Food("Apple", "Health apple", 90));
+        room9.addItem(new Food("Banana", "Health banana", 100));
+
+        room2.addItem(new RangedWeapon("bazooka","big weapon", 50, 3));
+        room4.addItem(new RangedWeapon("rpg", "big gun", 40, 5));
+        room6.addItem(new MeleeWeapon("sabel", "arab equipment", 30, 10000));
+        room8.addItem(new MeleeWeapon("hammer", "handy equipment", 10, 10000));
+
+
 
         currentRoom = room1;
         room1.setWest(null);
