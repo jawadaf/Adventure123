@@ -2,6 +2,8 @@ public class Adventure {
     private Map map;
     private Player player;
 
+    private String userInput;
+
     public Adventure() {
         map = new Map();
         map.builMap();
@@ -21,7 +23,7 @@ public class Adventure {
         return player.look();
     }
 
-    public void getInventory(){
+    public void getInventory() {
         player.getInventory();
     }
 
@@ -29,18 +31,16 @@ public class Adventure {
         return player.isFood(name);
     }
 
-    public boolean drop(String userInput){
+   public boolean drop(String userInput) {
         return player.dropItem(userInput);
 
     }
+
     public boolean take(String userInput) {
         return player.takeItem(userInput);
 
     }
 
-   // public String showItems(){
-        //return player.showItems();
-    //}
 
     public void goEast() {
         player.goEast();
@@ -57,7 +57,6 @@ public class Adventure {
     public void goNorth() {
         player.goNorth();
     }
-
 
 
 }

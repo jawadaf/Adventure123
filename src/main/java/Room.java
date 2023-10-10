@@ -39,7 +39,6 @@ public class Room {
     }
 
     public Item removeItem(Item item){
-        getItems().remove(item);
         return item;
     }
 

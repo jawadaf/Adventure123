@@ -21,15 +21,41 @@ public class Map {
 
 
 
-        room1.addItem (new Item ("waterbottle", "pick up the waterbottle"));
-        room2.addItem (new Item ("sword", "pick up the sword"));
-        room3.addItem (new Item ("scooter", "pick up the scooter"));
-        room4.addItem (new Item ("key", "pick up the key"));
-        room5.addItem (new Item ("napkin", "pick up the napkin"));
-        room6.addItem (new Item ("book", "pick up the book"));
-        room7.addItem (new Item ("remote", "pick up the remote"));
-        room8.addItem (new Item ("towel", "pick up the towel"));
-        room9.addItem (new Item ("pillow", "pick up the pillow"));
+        room1.addItem (new Item ("waterbottle", "a ice cold waterbottle"));
+        room2.addItem (new Item ("sword", "a long sharp weapon"));
+        room3.addItem (new Item ("scooter", "fast and cool scooter"));
+        room4.addItem (new Item ("key", "a useful key"));
+        room5.addItem (new Item ("napkin", "clean and neat "));
+        room6.addItem (new Item ("book", "a usefull tool"));
+        room7.addItem (new Item ("remote", "a long item with button on "));
+        room8.addItem (new Item ("towel", "to dry yourself with"));
+        room9.addItem (new Item ("pillow", "to sleep with"));
+
+        room1.removeItem (new Item ("waterbottle", "a ice cold waterbottle"));
+        room2.removeItem (new Item ("sword", "a long sharp weapon"));
+        room3.removeItem (new Item ("scooter", "fast and cool scooter"));
+        room4.removeItem (new Item ("key", "a useful key"));
+        room5.removeItem (new Item ("napkin", "clean and neat "));
+        room6.removeItem (new Item ("book", "a usefull tool"));
+        room7.removeItem (new Item ("remote", "a long item with button on "));
+        room8.removeItem (new Item ("towel", "to dry yourself with"));
+        room9.removeItem (new Item ("pillow", "to sleep with"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         room1.addFood("potion", "Health potion", 60);
         room3.addFood("Lollypop", "Health lollypop", 70);
