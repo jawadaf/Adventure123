@@ -58,5 +58,9 @@ public class Adventure {
         player.goNorth();
     }
 
+    public FoodEnum eatFood(String itemName){
+        return player.eatFood(itemName);
+    }
+
 
 }

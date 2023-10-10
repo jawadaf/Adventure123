@@ -5,11 +5,12 @@ public class Player {
 
     private Room currentRoom;
 
+    private int health;
 
-    ArrayList<Item> inventory;
+    private ArrayList<Item> inventory;
 
     public Player(Room room) {
-
+        this.health = 100;
         this.currentRoom = room;
         this.inventory = new ArrayList<>();
     }
@@ -123,4 +124,35 @@ public class Player {
 
         return false;
     }
+
+    public Item searchInventory(String itemName) {
+        for (Item i: inventory){
+            if (i.getItemName().equalsIgnoreCase(itemName)){
+                return i;
+
+            }
+        } return null;
+    }
+
+    public void setHealth(Item item) {
+        if (item instanceof Food) {
+            this.health += ((Food)item).getHealthPoints();
+        }
+
+    }
+
+    public FoodEnum eatFood(String itemName){
+        Item eatItem = searchInventory(itemName);
+        if (eatItem instanceof Food){
+            setHealth(eatItem);
+            inventory.remove(eatItem);
+            return FoodEnum.FOOD;
+
+        } else if (eatItem == null) {
+            return FoodEnum.NOT_FOUND;
+        } else {
+            return FoodEnum.NOT_FOOD;
+        }
+    }
+
 }

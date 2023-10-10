@@ -7,8 +7,6 @@ public class Weapon extends Item {
         this.damage = damage;
     }
 
-
-
     public String getammo() {
         return getammo();
     }
