@@ -44,19 +44,6 @@ public class Map {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         room1.addItem(new Food("potion", "Health potion", 60));
         room3.addItem(new Food("Lollypop", "Health lollypop", 70));
         room5.addItem(new Food("Burger", "Health burger", 80));
