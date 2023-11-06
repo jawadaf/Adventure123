@@ -17,27 +17,15 @@ public class Player {
 
 
     public String look() {
-        return currentRoom.getName() + " " + currentRoom.getDescription() + " " + currentRoom.getItems();
+       return currentRoom.toString();
     }
+
 
     public void getInventory() {
         if (inventory != null) {
             System.out.println(inventory);
         }
     }
-  /*  public boolean dropItem(String itemName) {
-        boolean itemDropped = false;
-
-        // Iterate through the inventory to find the item
-        for (Item item : inventory) {
-            if (item.getItemName().equals(itemName.toLowerCase())) {
-                inventory.remove(item);  // Remove the item from the inventory
-                currentRoom.getItems().add(item);  // Add the item to the room's list of items
-                itemDropped = true;
-                break;
-            }
-        }
-        return itemDropped;  */
 
     public boolean dropItem(String name) {
         Item dropped = currentRoom.removeItem();
@@ -65,51 +53,75 @@ public class Player {
     public String showItems() {
         StringBuilder stringBuilder = new StringBuilder("");
         for (Item item : currentRoom.getItems()) {
-            stringBuilder.append(item.getItemName());
+            stringBuilder.append(item.getItemName() + ", " + item.getDescription());
             stringBuilder.append("\n");
         }
         return stringBuilder.toString();
 
     }
 
-    public void goEast() {
-        if (currentRoom.getEast() != null) {
-            Room eastRoom = currentRoom.getEast();
-            System.out.println("You go east");
+    public boolean move(char direction) {
+        Room requestRoom = null;
+        boolean success = false;
+        if(direction == 'e') {
+            requestRoom = currentRoom.getEast();
+            success = goEast();
+        } else if (direction == 'w') {
+            requestRoom = currentRoom.getWest();
+            success = goWest();
+        } else if (direction == 'n') {
+            requestRoom = currentRoom.getNorth();
+            success = goNorth();
+        } else if (direction == 's') {
+            requestRoom = currentRoom.getSouth();
+            success = goSouth();
+        }
+        if (success && requestRoom != null) {
+            currentRoom = requestRoom;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean goEast() {
+        Room eastRoom = currentRoom.getEast();
+        if (eastRoom == null) {
+            return false;
+        } else {
             currentRoom = eastRoom;
-        } else {
-            System.out.println("You can't go there");
+            return true;
         }
     }
 
-    public void goWest() {
-        if (currentRoom.getWest() != null) {
-            Room westRoom = currentRoom.getWest();
-            System.out.println("You go west");
+    public boolean goWest() {
+        Room westRoom = currentRoom.getWest();
+        if (westRoom == null) {
+            return false;
+        } else {
             currentRoom = westRoom;
-        } else {
-            System.out.println("You can't go there");
+            return true;
         }
     }
 
-    public void goNorth() {
-        if (currentRoom.getNorth() != null) {
-            Room northRoom = currentRoom.getNorth();
-            System.out.println("You go north");
+    public boolean goNorth() {
+        Room northRoom = currentRoom.getNorth();
+        if (northRoom == null) {
+           return false;
+        } else {
             currentRoom = northRoom;
-        } else {
-            System.out.println("You can't go there");
+            return true;
         }
 
     }
 
-    public void goSouth() {
-        if (currentRoom.getSouth() != null) {
-            Room southRoom = currentRoom.getSouth();
-            System.out.println("You go south");
-            currentRoom = southRoom;
+    public boolean goSouth() {
+        Room southRoom = currentRoom.getSouth();
+        if (southRoom == null) {
+            return false;
         } else {
-            System.out.println("You can't go there");
+            currentRoom = southRoom;
+            return true;
         }
 
     }

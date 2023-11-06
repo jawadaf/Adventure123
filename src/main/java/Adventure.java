@@ -63,4 +63,11 @@ public class Adventure {
     }
 
 
+    public boolean move(char direction) {
+        return player.move(direction);
+    }
+
+    public String showItems() {
+        return player.showItems();
+    }
 }

@@ -91,7 +91,12 @@ public class Room {
         return null;
     }
 
-
+    @Override
+    public String toString() {
+        return "Room " + ", " +
+                "name " + name + ", " +
+                "description " + description;
+    }
 }
 
 
